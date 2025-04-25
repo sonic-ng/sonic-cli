@@ -1,0 +1,35 @@
+#!/usr/bin/python3
+
+import click
+import click_completion
+
+from show_cli import interfaces
+
+click_completion.init()
+
+
+@click.group()
+def cli():
+    pass
+
+#
+# 'mac' command ("show mac ...")
+#
+
+@cli.group(invoke_without_command="true")
+@click.option('-v', '--vlan')
+@click.option('-p', '--port')
+@click.option('-a', '--address')
+@click.option('-t', '--type')
+@click.option('-c', '--count', is_flag=True)
+@click.option('--verbose', is_flag=True, help="Enable verbose output")
+def mac(vlan, port, address, type, count, verbose):
+	"""Show MAC (FDB) entries"""
+	click.echo('Show MAC (FDB) entries')
+	pass
+
+# Add groups from other modules
+cli.add_command(interfaces.interfaces)
+
+if __name__ == "__main__":
+    cli()
