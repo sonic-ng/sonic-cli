@@ -4,9 +4,9 @@ import click
 import click_completion
 
 from show_cli import interfaces
+from show_cli import ip
 
 click_completion.init()
-
 
 @click.group()
 def cli():
@@ -30,6 +30,7 @@ def mac(vlan, port, address, type, count, verbose):
 
 # Add groups from other modules
 cli.add_command(interfaces.interfaces)
+cli.add_command(ip.ip)
 
 if __name__ == "__main__":
     cli()

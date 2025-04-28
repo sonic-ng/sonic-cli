@@ -25,13 +25,12 @@ def interfaces():
 def description(interfacename, verbose):
 	"""Show interface status, protocol and description"""
 
-	cursor.execute("SELECT ifname,admin_status,speed FROM config.port ORDER BY ifname")
+	cursor.execute("SELECT ifname,oper_status,admin_status,alias,description FROM appl.port ORDER BY ifname")
 	data = cursor.fetchall ()
 	bool2updown(data, 1)
-	header = ['Interface', 'admin', 'speed']
-	click.echo(tabulate(data, header))
-
+	bool2updown(data, 2)
 	header = ['Interface', 'Oper', 'Admin', 'Alias', 'Description']
+	click.echo(tabulate(data, header))
 
 if __name__ == "__main__":
 	interfaces()
