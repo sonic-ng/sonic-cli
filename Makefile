@@ -10,3 +10,5 @@ install:
 	install -c bash_completion /usr/share/bash-completion/bash_completion
 	cp -af show_cli /sonic-ng/cli/
 	cp -af config_cli /sonic-ng/cli/
+	rm -f /usr/local/bin/show && ln -s /sonic-ng/cli/show /usr/local/bin/show
+	rm -rf /usr/local/bin/config && ln -s /sonic-ng/cli/show /usr/local/bin/config
