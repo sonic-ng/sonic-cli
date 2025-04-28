@@ -1,6 +1,6 @@
-all:
-	#_SHOW_COMPLETE=source ./show > show.sh
-	#_CONFIG_COMPLETE=source ./config > config.sh
+build:
+	@echo _SHOW_COMPLETE=source ./show > show.sh
+	@echo _CONFIG_COMPLETE=source ./config > config.sh
 
 install:
 	@mkdir -p /sonic-ng/cli
