@@ -3,7 +3,7 @@
 import click
 import click_completion
 
-from config_cli import interfaces
+from config_cli import interface
 
 click_completion.init()
 
@@ -29,7 +29,7 @@ def mac(vlan, port, address, type, count, verbose):
 	pass
 
 # Add groups from other modules
-cli.add_command(interfaces.interfaces)
+cli.add_command(interface.interface)
 
 if __name__ == "__main__":
     cli()

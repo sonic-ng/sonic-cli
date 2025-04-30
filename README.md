@@ -35,3 +35,18 @@ source complete.sh
 
 ```
 -->
+
+
+## Show commands
+
+```bash
+show interfaces description
+
+show ip interfaces
+```
+
+## Config commands
+
+```bash
+config interface ip add <interface_name> <ip_addr>
+```
